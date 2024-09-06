@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HACKATHON PROJECT</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <h1>HACKATHON PROJECT</h1>
+    <p>Artificial Intelligence refers to the intelligence of machines. This is in contrast to the natural intelligence of humans and animals. With Artificial Intelligence, machines perform functions such as learning, planning, reasoning and problem-solving. Most noteworthy, Artificial Intelligence is the simulation of human intelligence by machines. It is probably the fastest-growing development in the World of <a href="#">technology and innovation</a>. Furthermore, many experts believe Al could solve major challenges and crisis situations.</p>
+    <div class="image-container">
+      <img class="image" src=""C:\Users\Himanshi Kumari\Desktop\Women-Empowerment.jpg"" alt="Women Empowerment">
+      <img class="image" src=""C:\Users\Himanshi Kumari\Desktop\Handshake.jpg"" alt="AI Handshake">
+      <img class="image" src=""C:\Users\Himanshi Kumari\Desktop\CCTV.jpg"" alt="Surveillance">
+    </div>
+    <p>
+      <ul>
+        <li>Live incidents</li>
+        <li>Of women</li>
+        <li><a href="#">Gov link</a></li>
+        <li>Police no</li>
+      </ul>
+    </p>
+    <button class="button" onclick="startApp()">Start button</button>
+  </div>
+</div>
+
+<script>
+  function startApp() {
+    // Create a new worker to run app.py
+    const worker = new Worker('app.py');
+
+    // Handle messages from the worker
+    worker.onmessage = (event) => {
+      console.log(event.data);
+      // Handle the message data from app.py
+    };
+
+    // Send a message to the worker to start execution
+    worker.postMessage('start');
+  }
+</script>
+
+</body>
+</html>
